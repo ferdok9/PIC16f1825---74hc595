@@ -1,0 +1,430 @@
+CCS PCM C Compiler, Version 5.025, 20087               24-Jan-15 18:26
+
+               Filename:   H:\Chast_2\PROEKTI\CCS PIC18F452\matrichna indikacia(Cifrova shemotehnika kursova)\2550\+74hc595 + PIC16f1825\+74hc595 + PIC16f1825.X\build\default\production\main.lst
+
+               ROM used:   214 words (3%)
+                           Largest free fragment is 2048
+               RAM used:   7 (1%) at main() level
+                           21 (2%) worst case
+               Stack used: 1 locations
+               Stack size: 16
+
+*
+0000:  MOVLP  00
+0001:  GOTO   086
+0002:  NOP
+.................... //#include <18F2550.h> 
+.................... ////#device ADC=8 
+.................... //#fuses HSPLL,NOWDT,NOPROTECT,NOLVP,NODEBUG,USBDIV,PLL5,CPUDIV1,VREGEN 
+.................... //#use delay(clock=48000000) 
+....................  
+.................... #include <16F1825.h> 
+.................... //////////// Standard Header file for the PIC16F1825 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F1825 
+0003:  DATA 62,36
+0004:  DATA E1,30
+0005:  DATA E1,30
+0006:  DATA 8A,06
+0007:  DATA 00,00
+0008:  MOVF   0B,W
+0009:  BCF    0B.7
+000A:  MOVLB  03
+000B:  BSF    15.7
+000C:  BSF    15.0
+000D:  NOP
+000E:  NOP
+000F:  BTFSC  09.7
+0010:  BSF    0B.7
+0011:  MOVF   13,W
+0012:  ANDLW  7F
+0013:  BTFSC  03.2
+0014:  GOTO   056
+0015:  MOVLB  00
+0016:  MOVWF  22
+0017:  MOVLB  03
+0018:  MOVF   11,W
+0019:  MOVLB  00
+001A:  MOVWF  23
+001B:  MOVLB  03
+001C:  MOVF   12,W
+001D:  MOVLB  00
+001E:  MOVWF  24
+001F:  MOVF   22,W
+0020:  BTFSS  11.4
+0021:  GOTO   020
+0022:  MOVLB  03
+0023:  MOVWF  1A
+0024:  MOVLB  00
+0025:  MOVF   23,W
+0026:  MOVLB  03
+0027:  MOVWF  11
+0028:  MOVLB  00
+0029:  MOVF   24,W
+002A:  MOVLB  03
+002B:  MOVWF  12
+002C:  MOVF   0B,W
+002D:  BCF    0B.7
+002E:  BSF    15.7
+002F:  BSF    15.0
+0030:  NOP
+0031:  NOP
+0032:  BTFSC  09.7
+0033:  BSF    0B.7
+0034:  RLF    13,W
+0035:  RLF    14,W
+0036:  ANDLW  7F
+0037:  BTFSC  03.2
+0038:  GOTO   056
+0039:  MOVLB  00
+003A:  MOVWF  22
+003B:  MOVLB  03
+003C:  MOVF   11,W
+003D:  MOVLB  00
+003E:  MOVWF  23
+003F:  MOVLB  03
+0040:  MOVF   12,W
+0041:  MOVLB  00
+0042:  MOVWF  24
+0043:  MOVF   22,W
+0044:  BTFSS  11.4
+0045:  GOTO   044
+0046:  MOVLB  03
+0047:  MOVWF  1A
+0048:  MOVLB  00
+0049:  MOVF   23,W
+004A:  MOVLB  03
+004B:  MOVWF  11
+004C:  MOVLB  00
+004D:  MOVF   24,W
+004E:  MOVLB  03
+004F:  MOVWF  12
+0050:  INCF   11,F
+0051:  BTFSC  03.2
+0052:  INCF   12,F
+0053:  MOVLB  00
+0054:  GOTO   008
+0055:  MOVLB  03
+0056:  MOVLP  00
+0057:  MOVLB  00
+0058:  GOTO   0A8 (RETURN)
+....................  
+.................... #list 
+....................  
+.................... #device ADC=16 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... //#fuses INTRC_IO,PLL 
+.................... #fuses NOPROTECT,NODEBUG 
+....................  
+.................... #use delay(internal=32MHz) 
+*
+0071:  MOVLW  20
+0072:  MOVWF  05
+0073:  MOVLW  02
+0074:  MOVWF  04
+0075:  MOVF   00,W
+0076:  BTFSC  03.2
+0077:  GOTO   085
+0078:  MOVLW  0A
+0079:  MOVWF  78
+007A:  CLRF   77
+007B:  DECFSZ 77,F
+007C:  GOTO   07B
+007D:  DECFSZ 78,F
+007E:  GOTO   07A
+007F:  MOVLW  5F
+0080:  MOVWF  77
+0081:  DECFSZ 77,F
+0082:  GOTO   081
+0083:  DECFSZ 00,F
+0084:  GOTO   078
+0085:  RETURN
+.................... //#use rs232(baud=9600, UART1, errors) 
+.................... #use rs232(baud=9600, xmit=PIN_A0,rcv=PIN_A1, errors) 
+....................  
+....................  
+.................... #byte status = 0x003 
+.................... #bit c = status.0 
+....................  
+.................... #byte 	PORTC	= 0x00E   // PORTC 
+.................... #byte 	TRISC	= 0x08E   // PORTC tris 
+.................... #byte 	LATC	= 0x10E   // PORTB LAT 
+....................  
+.................... #include "74HC595.c" 
+....................  
+.................... #include <74HC595.h> 
+....................  
+....................  
+.................... #bit DATA_595  = PORTC.3 //PORTA PIN1 bialo 
+.................... #bit CLK_595   = PORTC.4 //PORTA PIN0 cherno 
+.................... #bit LATCH_595 = PORTC.5 //PORTA PIN2 cher 
+....................  
+.................... //trisa = 0xFF; 
+....................  
+.................... void HC74595_send(unsigned int bytefor595); 
+.................... void HC74595_Latch(void); 
+.................... void HC74595_Clk(void); 
+....................  
+....................  
+....................  
+....................  
+.................... void HC74595_send(unsigned int bytefor595){ 
+....................    char caa; 
+....................  
+.................... for (caa=8;caa>0;caa--) 
+*
+0059:  MOVLW  08
+005A:  MOVWF  22
+005B:  MOVF   22,F
+005C:  BTFSC  03.2
+005D:  GOTO   06C
+....................      { 
+....................          if ((bytefor595&0x80)==0)DATA_595=0; 
+005E:  MOVF   21,W
+005F:  ANDLW  80
+0060:  BTFSS  03.2
+0061:  GOTO   064
+0062:  BCF    0E.3
+0063:  GOTO   065
+....................          else DATA_595=1;            
+0064:  BSF    0E.3
+....................  
+....................          bytefor595 = bytefor595 << 1; 
+0065:  BCF    03.0
+0066:  RLF    21,F
+.................... 		 HC74595_Clk(); 
+*
+006A:  DECF   22,F
+006B:  GOTO   05B
+.................... 	} 
+006C:  RETURN
+.................... } 
+.................... ///////////////////////////////////////////////// 
+.................... void HC74595_Latch(void){ 
+....................  
+.................... LATCH_595=1; 
+006D:  BSF    0E.5
+.................... LATCH_595=0; 
+006E:  BCF    0E.5
+.................... LATCH_595=1; 
+006F:  BSF    0E.5
+0070:  RETURN
+.................... } 
+.................... ///////////////////////////////////////////////// 
+.................... void HC74595_Clk(void){ 
+.................... CLK_595=0; 
+*
+0067:  BCF    0E.4
+.................... CLK_595=1; 
+0068:  BSF    0E.4
+.................... CLK_595=0; 
+0069:  BCF    0E.4
+.................... } 
+....................  
+....................  
+.................... //unsigned int8 indk[4]= {0x0,0x10,0x20,0x30}; 
+.................... //#INT_TIMER1                            // waking up from T1 overflow 
+.................... //void timer1_isr(void) 
+.................... //{ 
+.................... //char pre=0; 
+.................... //static int8 i=1,time=0,kolon=0,h; 
+.................... //	set_timer1(500);//(64000);// 
+.................... //time++; 
+.................... //if(time>29){ 
+.................... // 
+.................... //		time=0; 
+.................... // 
+.................... //		i<<=1; 
+.................... //		if(i==0x10)i=1; 
+.................... // 
+.................... //		pre  =0b10010000 | i; 
+.................... //		HC74595_send(pre); 
+.................... //		HC74595_Latch(); 
+.................... // 
+.................... //		switch (i) { 
+.................... // 
+.................... //		    case 1:	pre  = indk[0] | i; 
+.................... //		           break; 
+.................... // 
+.................... //		    case 2:	pre  = indk[1] | i; 
+.................... //		           break; 
+.................... // 
+.................... //		    case 4:	pre  = indk[2] | i; 
+.................... //		           break; 
+.................... // 
+.................... //		    case 8:	pre  = indk[3] | i; 
+.................... //		           break; 
+.................... //			} 
+.................... //		HC74595_send(pre); 
+.................... //		HC74595_Latch(); 
+.................... // 
+.................... //	} 
+.................... //} 
+....................  
+.................... /////////////////////////////////////////////////////////// 
+.................... void main(){ 
+*
+0086:  MOVLW  F0
+0087:  MOVLB  01
+0088:  MOVWF  19
+0089:  MOVLB  02
+008A:  BSF    1D.2
+008B:  BSF    1D.7
+008C:  MOVLB  00
+008D:  CLRF   20
+008E:  MOVLB  03
+008F:  BSF    1F.3
+0090:  MOVLW  40
+0091:  MOVWF  1B
+0092:  MOVLW  03
+0093:  MOVWF  1C
+0094:  MOVLW  A6
+0095:  MOVWF  1E
+0096:  MOVLW  90
+0097:  MOVWF  1D
+0098:  CLRF   0C
+0099:  CLRF   0E
+009A:  MOVLB  02
+009B:  CLRF   12
+009C:  CLRF   11
+009D:  CLRF   14
+009E:  CLRF   13
+....................  
+.................... //      set_timer1(0); 
+.................... //      enable_interrupts(INT_TIMER1); 
+.................... // 
+.................... //      setup_timer_1(T1_INTERNAL|T1_DIV_BY_8); 
+.................... //     enable_interrupts(GLOBAL); 
+....................  
+.................... TRISC = 0x00; 
+009F:  MOVLB  01
+00A0:  CLRF   0E
+....................  
+.................... printf("blaaaa\n\r"); 
+00A1:  MOVLW  03
+00A2:  MOVLB  03
+00A3:  MOVWF  11
+00A4:  MOVLW  00
+00A5:  MOVWF  12
+00A6:  MOVLB  00
+00A7:  GOTO   008
+....................  
+.................... while(TRUE){ 
+....................  
+.................... HC74595_send(0b01100011); 
+00A8:  MOVLW  63
+00A9:  MOVWF  21
+00AA:  CALL   059
+.................... HC74595_Latch();     
+00AB:  CALL   06D
+.................... delay_ms(500); 
+00AC:  MOVLW  02
+00AD:  MOVWF  21
+00AE:  MOVLW  FA
+00AF:  MOVWF  22
+00B0:  CALL   071
+00B1:  DECFSZ 21,F
+00B2:  GOTO   0AE
+.................... HC74595_send(0b01100101); 
+00B3:  MOVLW  65
+00B4:  MOVWF  21
+00B5:  CALL   059
+.................... HC74595_Latch();  
+00B6:  CALL   06D
+.................... delay_ms(500); 
+00B7:  MOVLW  02
+00B8:  MOVWF  21
+00B9:  MOVLW  FA
+00BA:  MOVWF  22
+00BB:  CALL   071
+00BC:  DECFSZ 21,F
+00BD:  GOTO   0B9
+.................... HC74595_send(0b01101001); 
+00BE:  MOVLW  69
+00BF:  MOVWF  21
+00C0:  CALL   059
+.................... HC74595_Latch();  
+00C1:  CALL   06D
+.................... delay_ms(500); 
+00C2:  MOVLW  02
+00C3:  MOVWF  21
+00C4:  MOVLW  FA
+00C5:  MOVWF  22
+00C6:  CALL   071
+00C7:  DECFSZ 21,F
+00C8:  GOTO   0C4
+.................... HC74595_send(0b01110001); 
+00C9:  MOVLW  71
+00CA:  MOVWF  21
+00CB:  CALL   059
+.................... HC74595_Latch();  
+00CC:  CALL   06D
+.................... delay_ms(500); 
+00CD:  MOVLW  02
+00CE:  MOVWF  21
+00CF:  MOVLW  FA
+00D0:  MOVWF  22
+00D1:  CALL   071
+00D2:  DECFSZ 21,F
+00D3:  GOTO   0CF
+00D4:  GOTO   0A8
+.................... } 
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... //    while(TRUE){ 
+.................... //        printf("blaaaa"); 
+.................... //        delay_ms(500); 
+.................... //    } 
+.................... } 
+....................  
+00D5:  SLEEP
+.................... /* 
+.................... DATA_595=1; 
+.................... HC74595_Clk(); 
+.................... HC74595_Clk(); 
+.................... HC74595_Clk(); 
+.................... HC74595_Clk(); 
+.................... HC74595_Clk(); 
+.................... HC74595_Clk(); 
+.................... HC74595_Clk(); 
+.................... HC74595_Clk(); 
+.................... HC74595_Latch(); 
+....................  
+....................       set_timer1(0); 
+....................       enable_interrupts(INT_TIMER1); 
+....................       enable_interrupts(GLOBAL); 
+....................       setup_timer_1(T1_INTERNAL|T1_DIV_BY_4); 
+....................  *  
+....................     DATA_595=1; 
+....................     CLK_595=1; 
+....................     LATCH_595=1; 
+....................  
+....................     delay_ms(100); 
+....................  
+....................     DATA_595=0; 
+....................     CLK_595=0; 
+....................     LATCH_595=0; 
+....................  
+....................     delay_ms(100); 
+.................... */ 
+
+Configuration Fuses:
+   Word  1: 39C4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD NOBROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT PLL_SW STVREN BORV19 NODEBUG NOLVP

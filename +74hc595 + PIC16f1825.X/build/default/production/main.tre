@@ -1,0 +1,20 @@
+ÀÄ+74hc595 + PIC16f1825
+   ÀÄMAIN  0/80  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@PSTRINGC7_9600_116_117  0/81  Ram=3
+      ÃÄHC74595_send  0/20  Ram=3
+      ³  ÀÄHC74595_Clk  (Inline)  Ram=0
+      ÃÄHC74595_Latch  0/4  Ram=0
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÃÄHC74595_send  0/20  Ram=3
+      ³  ÀÄ*
+      ÃÄHC74595_Latch  0/4  Ram=0
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÃÄHC74595_send  0/20  Ram=3
+      ³  ÀÄ*
+      ÃÄHC74595_Latch  0/4  Ram=0
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÃÄHC74595_send  0/20  Ram=3
+      ³  ÀÄ*
+      ÃÄHC74595_Latch  0/4  Ram=0
+      ÀÄ@delay_ms1  0/21  Ram=1
